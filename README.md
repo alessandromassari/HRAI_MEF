@@ -2,7 +2,7 @@
 ## An AI Assistant Robot for the Italian Ministry of Economy and Finance
 
 MEF-Bot is an intelligent robotic assistant built on the **NAO/Pepper platform**, 
-designed to support administrative workflows and new employee onboarding at the Italian 
+designed to explore the interaction bewteen human-robot and AI in a PA context and to support administrative workflows and new employee onboarding at the Italian 
 Ministry of Economy and Finance (MEF).
 
 ## Overview

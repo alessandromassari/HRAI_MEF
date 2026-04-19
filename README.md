@@ -1,25 +1,55 @@
-# 🏛️🤖 HRAI_MEF 
-## An AI Assistant Robot for the Italian Ministry of Economy and Finance
+# HRAI_MEF 
+## An LLM powered robot assistant for the Italian Ministry of Economy and Finance
 
-MEF-Bot is an intelligent robotic assistant built on the **NAO/Pepper platform**, 
-designed to explore the interaction bewteen human-robot and AI in a PA context and to support administrative workflows and new employee onboarding at the Italian 
-Ministry of Economy and Finance (MEF).
+MEF-Bot is a Human-Robot Interaction (HRI) system built on the **Pepper humanoid 
+robot** developed for the HRAI course project held in Sapienza University of Rome. 
+The system deploys Pepper as a conversational assistant in a real 
+public administration office, the Italian Ministry of Economy and Finance (MEF).
 
-## Overview
+## 🏛️ Context
+Public administration offices represent one of the most socially and 
+institutionally significant environments in which to study human-robot 
+interaction. Unlike controlled lab settings, a real PA office brings 
+together users across a wide range of ages, technical literacy levels, and interaction expectations. 
+This makes it a  uniquely valuable testbed not only for robotics and AI engineering, but also for 
+understanding how people perceive, trust, and adapt to AI-powered robots in 
+high-stakes institutional contexts.
 
-The system leverages Pepper's tablet interface and natural language capabilities 
-to streamline two core operational areas:
+From a social sciences perspective, the deployment raises meaningful questions: 
+How the physical presence of a robot shape user trust and compliance compared to a screen-based chatbot? 
+How do professional norms and power dynamics in a bureaucratic environment influence human-robot interaction 
+patterns? How do people negotiate authority and agency when a robot mediates 
+access to information? MEF-Bot is designed as a real-world probe into these 
+questions.
 
-- **Office Worker Assistant** — Staff can query the robot to retrieve administrative 
-  documents, forms, and regulations from a local database/API, with results displayed 
-  directly on Pepper's tablet.
-- **Visitor & Employee Reception** — The robot greets new employees and visitors, 
-  identifies their needs, guides them to the appropriate office, and displays or 
-  provides required onboarding forms.
+## 🎯 Use Cases
+- **Office Worker Assistant**: Employees query Pepper in natural Italian 
+  to retrieve administrative documents, forms, and procedures
+- **Visitor & Employee Reception**: Pepper greets and guides visitors, 
+  identifies their needs, and provides onboarding information to new employees.
+  
+## 🤖 System Overview
 
-A third use case — **Data Preparation Helper** — is planned for future development, 
-enabling staff to request structured reports (e.g. budget summaries by department) 
-via voice or text input.
+The architecture follows the **companion server pattern**: Pepper handles 
+audio capture, speech output, gesture, LED feedback, and tablet display, 
+while more expensive AI computation runs on a local server connected via LAN.
 
-## Platform
-Built for **SoftBank Robotics NAO/Pepper** robots.
+**Core pipeline:**
+- **ASR**: Automatic Speech Recognition to convert italian spoken audio into written text;
+- **LLM**: Off/On-premise LLM model as the reasoning engine with a context-specific system prompt
+- **RAG**: Retrieval-Augmented Generation over a knowledge base of ministry documents;
+- **Tablet UI**: Dynamic display via Flask plus WebSocket, rendered in Pepper's 10.1" embodied tablet
+  to support the spoken communication and integrate information;
+- **Navigation**: NAOqi ALNavigation avoiding obstacles with pre-built laser map and 
+  defined waypoints (Pepper phase)
+
+
+
+## ⚖️ License
+This project is released under:
+
+CC BY-NC 4.0 — Attribution required, commercial use is not allowed.
+
+© 2026 [Alessandro Massari]
+
+

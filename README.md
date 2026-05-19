@@ -1,9 +1,9 @@
 # HRAI_MEF 
 ## An LLM powered robot assistant for the Italian Ministry of Economy and Finance
 
-MEF-Bot is a Human-Robot Interaction (HRI) system built on the **Pepper humanoid 
+MEF-Bot is a Human-Robot Interaction (HRI) system built on the **G1 humanoid 
 robot** developed for the HRAI course project held in Sapienza University of Rome. 
-The system deploys Pepper as a conversational assistant in a real 
+The system simulate the deploy of Unitree G1 as a conversational assistant in a real 
 public administration office, the Italian Ministry of Economy and Finance (MEF).
 
 ## 🏛️ Context
@@ -23,14 +23,14 @@ access to information? MEF-Bot is designed as a real-world probe into these
 questions.
 
 ## 🎯 Use Cases
-- **Office Worker Assistant**: Employees query Pepper in natural Italian 
+- **Office Worker Assistant**: Employees query the robot in natural Italian 
   to retrieve administrative documents, forms, and procedures
-- **Visitor & Employee Reception**: Pepper greets and guides visitors, 
+- **Visitor & Employee Reception**: The robot greets and guides visitors, 
   identifies their needs, and provides onboarding information to new employees.
   
 ## 🤖 System Overview
 
-The architecture follows the **companion server pattern**: Pepper handles 
+The architecture follows the **companion server pattern**: The humanoid handles 
 audio capture, speech output, gesture, LED feedback, and tablet display, 
 while more expensive AI computation runs on a local server connected via LAN.
 
@@ -38,10 +38,8 @@ while more expensive AI computation runs on a local server connected via LAN.
 - **ASR**: Automatic Speech Recognition to convert italian spoken audio into written text;
 - **LLM**: Off/On-premise LLM model as the reasoning engine with a context-specific system prompt
 - **RAG**: Retrieval-Augmented Generation over a knowledge base of ministry documents;
-- **Tablet UI**: Dynamic display via Flask plus WebSocket, rendered in Pepper's 10.1" embodied tablet
-  to support the spoken communication and integrate information;
-- **Navigation**: NAOqi ALNavigation avoiding obstacles with pre-built laser map and 
-  defined waypoints (Pepper phase)
+- **Navigation**: Walk avoiding obstacles with pre-built laser map and 
+  defined waypoints
 
 
 

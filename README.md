@@ -41,7 +41,18 @@ while more expensive AI computation runs on a local server connected via LAN.
 - **Navigation**: Walk avoiding obstacles with pre-built laser map and 
   defined waypoints
 
+## How to use
 
+From terminal, only the first time:
+
+```bash
+chmod +x init_env.sh start.sh
+./init_env.sh
+```
+All times after:
+```bash
+./start.sh
+```
 
 ## ⚖️ License
 This project is released under:

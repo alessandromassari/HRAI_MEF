@@ -43,13 +43,16 @@ while more expensive AI computation runs on a local server connected via LAN.
 
 ## How to use
 
+Clone the repository with: 
+```bash
+git clone --recursive <URL_DEL_PROGETTO_PRINCIPALE>
+```
 From terminal, only the first time:
-
 ```bash
 chmod +x init_env.sh start.sh
 ./init_env.sh
 ```
-All times after:
+All times after to start the Docker:
 ```bash
 ./start.sh
 ```

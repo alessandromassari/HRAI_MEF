@@ -1,7 +1,7 @@
 # HRAI_MEF 
 ## An LLM powered robot assistant for the Italian Ministry of Economy and Finance
 
-MEF-Bot is a Human-Robot Interaction (HRI) system built on the **G1 humanoid 
+MEF-Bot is a Human-Robot AI Interaction (HRI) system built on the **G1 humanoid 
 robot** developed for the HRAI course project held in Sapienza University of Rome. 
 The system simulate the deploy of Unitree G1 as a conversational assistant in a real 
 public administration office, the Italian Ministry of Economy and Finance (MEF).
@@ -31,15 +31,13 @@ questions.
 ## 🤖 System Overview
 
 The architecture follows the **companion server pattern**: The humanoid handles 
-audio capture, speech output, gesture, LED feedback, and tablet display, 
-while more expensive AI computation runs on a local server connected via LAN.
+audio capture, speech output and all the interactions, while expensive AI computation runs on a cloud or local machine
 
 **Core pipeline:**
 - **ASR**: Automatic Speech Recognition to convert italian spoken audio into written text;
 - **LLM**: Off/On-premise LLM model as the reasoning engine with a context-specific system prompt
 - **RAG**: Retrieval-Augmented Generation over a knowledge base of ministry documents;
-- **Navigation**: Walk avoiding obstacles with pre-built laser map and 
-  defined waypoints
+- **Navigation**: Walk avoiding obstacles with pre-built occupancy map
 
 ## How to use
 

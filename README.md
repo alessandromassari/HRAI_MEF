@@ -23,24 +23,34 @@ access to information? MEF-Bot is designed as a real-world probe into these
 questions.
 
 ## 🎯 Use Cases
-- **Office Worker Assistant**: Employees query the robot in natural Italian 
+- **Office Worker Assistant**: Users query the robot in natural language
   to retrieve administrative documents, forms, and procedures
 - **Visitor & Employee Reception**: The robot greets and guides visitors, 
   identifies their needs, and provides onboarding information to new employees.
   
 ## 🤖 System Overview
+The architecture combines LLM-based task interpretation, persistent semantic perception, symbolic semantic relations, classical path planning and Reinforcement Learning for humanoid locomotion.
 
-The architecture follows the **companion server pattern**: The humanoid handles 
-audio capture, speech output and all the interactions, while expensive AI computation runs on a cloud or local machine
-
-**Core pipeline:**
-- **ASR**: Automatic Speech Recognition to convert italian spoken audio into written text;
+**Main components:**
+- **Persistent Semantic perception**: RGB-D observations are processed to detect, segment, localise and associate objects across different viewpoints;
 - **LLM**: Off/On-premise LLM model as the reasoning engine with a context-specific system prompt
-- **RAG**: Retrieval-Augmented Generation over a knowledge base of ministry documents;
-- **Navigation**: Walk avoiding obstacles with pre-built occupancy map
+- **LOST-3DSG open vocabulary semantic mapping**: A customized version of the work presented in LOST-3DSG paper provides the main conceptual reference for the persistent object-centric world representation;
+- **Navigation**: Walk avoiding obstacles over an occupancy map built during 'exploration' phase;
+- **MuJoCo & MJLab**: provides the simulated humanoid platform and physical environment.
+
+## 🧪 Experimental Evaluation
+The system was evaluated through separate navigate, locate, and describe tasks using multiple linguistic formulations and semantic targets.
+
+The evaluation considers:
+
+- intent recognition;
+- semantic grounding;
+- task success;
+- response correctness and grounding;
+- navigation execution;
+- inference and end-to-end latency.
 
 ## How to use
-
 Clone the repository with: 
 ```bash
 git clone --recursive <URL_DEL_PROGETTO_PRINCIPALE>
@@ -54,7 +64,11 @@ All times after to start the Docker:
 ```bash
 ./start.sh
 ```
-
+The main HRAI application is launched through:
+```bash
+cd /workspace/exchange/interaction
+python3 HG1AI_interaction.py
+```
 ## ⚖️ License
 This project is released under:
 
